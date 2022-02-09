@@ -1,6 +1,6 @@
 import httpError from 'http-errors'
-import logger from '../config/logger'
 import { object } from 'yup'
+import logger from '../config/logger'
 
 const validate = schema => (req, res, next) => {
   try {

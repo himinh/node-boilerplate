@@ -1,9 +1,10 @@
 import { Router } from 'express'
-const router = new Router()
 import { authController } from '../controllers'
 import auth from '../middlewares/auth'
 import validate from '../middlewares/validate'
 import { authValidation, userValidation } from '../validations'
+
+const router = new Router()
 
 router.post(
   '/sign-up',

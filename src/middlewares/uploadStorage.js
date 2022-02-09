@@ -1,5 +1,6 @@
 import multer from 'multer'
 import config from '../config/config'
+
 const storage = multer.diskStorage({
   // destination
   destination: (req, file, cb) => {
@@ -7,7 +8,7 @@ const storage = multer.diskStorage({
   },
   // filename
   filename: (req, file, cb) => {
-    cb(null, file.fieldname + '-' + Date.now() + '-' + file.originalname)
+    cb(null, `${file.fieldname}-${Date.now()}-${file.originalname}`)
   },
 })
 
@@ -16,8 +17,8 @@ const fileFilter = (req, file, cb) => {
 }
 
 const uploadStorage = multer({
-  storage: storage,
-  fileFilter: fileFilter,
+  storage,
+  fileFilter,
 })
 
 export default uploadStorage

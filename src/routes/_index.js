@@ -2,6 +2,7 @@ import { Router } from 'express'
 import authRoutes from './auth.route'
 import userRoutes from './user.route'
 import uploadRoutes from './upload.route'
+
 const router = new Router()
 
 const defaultRoutes = [

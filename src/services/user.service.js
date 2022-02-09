@@ -2,20 +2,6 @@ import createError from 'http-errors'
 import { User } from '../models'
 
 /**
- * Create user
- * @param {Object} body
- * @returns {Promise<user>}
- */
-const createUser = async userBody => {
-  const user = await getUserByEmail(userBody.email)
-  if (user) {
-    throw createError.BadRequest('Email already exists')
-  }
-  const newUser = await User.create(userBody)
-  return newUser
-}
-
-/**
  * Get users by query(filter, options)
  * @param {Object} filter
  * @param {Object} options
@@ -54,6 +40,19 @@ const getUserByEmail = async email => {
   return user
 }
 
+/**
+ * Create user
+ * @param {Object} body
+ * @returns {Promise<user>}
+ */
+const createUser = async userBody => {
+  const user = await getUserByEmail(userBody.email)
+  if (user) {
+    throw createError.BadRequest('Email already exists')
+  }
+  const newUser = await User.create(userBody)
+  return newUser
+}
 /**
  * Update user by id
  * @param {ObjectId} userId

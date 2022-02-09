@@ -1,6 +1,6 @@
-import config from '../config/config'
 import cloudinary from 'cloudinary'
 import fs from 'fs'
+import config from '../config/config'
 
 // Config cloudinary
 cloudinary.v2.config(config.cloudinaryV2.config)

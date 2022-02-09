@@ -11,7 +11,7 @@ import cors from 'cors'
 import httpError from 'http-errors'
 import 'colors'
 
-import { jwtStrategy } from './config/passport'
+import jwtStrategy from './config/passport'
 import config from './config/config'
 import db from './config/db'
 import logger from './config/logger'

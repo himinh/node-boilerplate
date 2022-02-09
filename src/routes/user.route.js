@@ -1,9 +1,10 @@
 import { Router } from 'express'
-const router = new Router()
 import validate from '../middlewares/validate'
 import { userValidation } from '../validations'
 import auth from '../middlewares/auth'
 import { userController } from '../controllers'
+
+const router = new Router()
 
 router.get('/me', auth(), userController.getMe)
 router.patch(

@@ -1,6 +1,7 @@
 import * as yup from 'yup'
 import { transValidations } from '../../lang/en'
 import config from './config.validation'
+
 const createUser = {
   firstName: yup.string().required(),
   lastName: yup.string().required(),

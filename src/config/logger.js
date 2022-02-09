@@ -1,5 +1,6 @@
 import { createLogger, transports, format } from 'winston'
 import config from './config.js'
+
 const { combine, colorize, uncolorize, label, splat, printf } = format
 
 // enumerate error
@@ -19,7 +20,7 @@ const logConfiguration = {
       label: __filename.split('/').pop(),
     }),
     splat(),
-    printf(info => `${info.level}`.bold + `: ${info.message}`)
+    printf(info => `${`${info.level}`.bold}: ${info.message}`)
   ),
 }
 

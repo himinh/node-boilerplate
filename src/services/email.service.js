@@ -25,10 +25,10 @@ if (config.env !== 'test') {
  * @param {text|html} htmlContent
  */
 const sendEmail = async (to, subject, htmlContent) => {
-  let info = {
+  const info = {
     from: config.email.from,
-    to: to,
-    subject: subject,
+    to,
+    subject,
     html: htmlContent,
   }
   await transporter.sendMail(info)

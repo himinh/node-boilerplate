@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken'
-import { transErrors } from '../../lang/en'
 import httpError from 'http-errors'
+import { transErrors } from '../../lang/en'
 import config from '../config/config'
 import userService from './user.service'
 
@@ -110,7 +110,8 @@ const generateResetPasswordToken = async email => {
  * @returns {Promise<user>}
  */
 const verifyActivationToken = async token => {
-  return await verifyToken(token, config.jwt.secret.activate)
+  const user = await verifyToken(token, config.jwt.secret.activate)
+  return user
 }
 
 /**

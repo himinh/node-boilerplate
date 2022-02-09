@@ -63,7 +63,7 @@ const login = catchAsync(async (req, res) => {
  */
 const accessToken = catchAsync(async (req, res, next) => {
   //  rf_token
-  const rf_token = req.signedCookies['_apprftoken']
+  const rf_token = req.signedCookies._apprftoken
   if (!rf_token) return next(createHttpError.BadRequest('Please sign in.'))
 
   // verify token

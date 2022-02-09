@@ -1,13 +1,12 @@
 import dotenv from 'dotenv'
+
 dotenv.config()
 
-export const {
-  // app
+const {
   NODE_ENV,
   PORT,
   MONGODB_URL,
 
-  // jwt
   JWT_ACCESS_SECRET,
   JWT_ACCESS_EXPIRATION,
 
@@ -20,12 +19,10 @@ export const {
   JWT_RESET_PASSWORD_SECRET,
   JWT_RESET_PASSWORD_EXPIRATION,
 
-  //cloud
   CLOUD_NAME,
   CLOUD_API_KEY,
   CLOUD_API_SECRET,
 
-  // smtp
   SMTP_HOST,
   SMTP_PORT,
   SMTP_USERNAME,
