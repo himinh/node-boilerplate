@@ -3,7 +3,7 @@ import config from './config'
 import User from '../models/user.model'
 
 const jwtOptions = {
-  secretOrKey: config.jwt.secret.access,
+  secretOrKey: config.jwt.accessSecret,
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
 }
 

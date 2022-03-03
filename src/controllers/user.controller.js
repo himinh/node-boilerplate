@@ -2,7 +2,7 @@ import createError from 'http-errors'
 import pick from '../utils/pick'
 import catchAsync from '../utils/catchAsync'
 import { userService } from '../services'
-import { tranSuccess } from '../../lang/en'
+import { tranSuccess } from '../_lang/en'
 
 /**
  * Create a user

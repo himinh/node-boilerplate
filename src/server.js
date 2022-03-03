@@ -32,7 +32,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 // cookie parser
-app.use(cookieParser(config.jwt.secret.refresh))
+app.use(cookieParser(config.jwt.refreshSecret))
 
 // dev logging middleware
 if (config.env === 'development') {

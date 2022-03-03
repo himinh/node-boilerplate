@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer'
 import { google } from 'googleapis'
 import config from '../config/config'
 import logger from '../config/logger'
-import { transEmail } from '../../lang/en'
+import { transEmail } from '../_lang/en'
 // create stmp transporter
 const transporter = nodemailer.createTransport(config.email.smtp)
 

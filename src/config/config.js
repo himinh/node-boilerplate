@@ -35,36 +35,29 @@ const config = {
   port: PORT,
   mongodbUrl: MONGODB_URL,
   jwt: {
-    secret: {
-      access: JWT_ACCESS_SECRET,
-      refresh: JWT_REFRESH_SECRET,
-      activate: JWT_ACTIVATE_SECRET,
-      resetPassword: JWT_RESET_PASSWORD_SECRET,
-    },
-    expiration: {
-      access: JWT_ACCESS_EXPIRATION,
-      refresh: JWT_REFRESH_EXPIRATION,
-      activate: JWT_ACTIVATE_EXPIRATION,
-      resetPassword: JWT_RESET_PASSWORD_EXPIRATION,
-    },
-    options: {
-      expiresIn: '12h', // 1d
-    },
-    cookie: {
-      path: '/api/auth/access',
-      maxAge: 1000,
-      httpOnly: true,
-      sameSite: true,
-      signed: true,
-      secure: true,
-    },
+    accessSecret: JWT_ACCESS_SECRET,
+    refreshSecret: JWT_REFRESH_SECRET,
+    activateSecret: JWT_ACTIVATE_SECRET,
+    resetPasswordSecret: JWT_RESET_PASSWORD_SECRET,
+
+    accessExpiration: JWT_ACCESS_EXPIRATION,
+    refreshExpiration: JWT_REFRESH_EXPIRATION,
+    activateExpiration: JWT_ACTIVATE_EXPIRATION,
+    resetPasswordExpiration: JWT_RESET_PASSWORD_EXPIRATION,
+
+  },
+  cookie: {
+    path: '/api/auth/access',
+    maxAge: 7 * 24 * 60 * 60 * 1000, // 7days
+    httpOnly: true,
+    sameSite: true,
+    signed: true,
+    secure: true,
   },
   cloudinaryV2: {
-    config: {
-      cloud_name: CLOUD_NAME,
-      api_key: CLOUD_API_KEY,
-      api_secret: CLOUD_API_SECRET,
-    },
+    cloud_name: CLOUD_NAME,
+    api_key: CLOUD_API_KEY,
+    api_secret: CLOUD_API_SECRET,
   },
 
   email: {

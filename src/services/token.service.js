@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken'
 import httpError from 'http-errors'
-import { transErrors } from '../../lang/en'
+import { transErrors } from '../_lang/en'
 import config from '../config/config'
 import userService from './user.service'
 
@@ -54,8 +54,8 @@ const generateActivationToken = async userBody => {
 
   const token = await generateToken(
     userBody,
-    config.jwt.secret.activate,
-    config.jwt.expiration.activate
+    config.jwt.activateSecret,
+    config.jwt.activateExpiration
   )
   return token
 }
@@ -68,8 +68,8 @@ const generateActivationToken = async userBody => {
 const generateRefreshToken = async userId => {
   const token = await generateToken(
     { sub: userId },
-    config.jwt.secret.refresh,
-    config.jwt.expiration.refresh
+    config.jwt.refreshSecret,
+    config.jwt.refreshExpiration
   )
   return token
 }
@@ -82,8 +82,8 @@ const generateRefreshToken = async userId => {
 const generateAccessToken = async userId => {
   const token = await generateToken(
     { sub: userId },
-    config.jwt.secret.access,
-    config.jwt.expiration.access
+    config.jwt.accessSecret,
+    config.jwt.accessExpiration
   )
   return token
 }
@@ -98,8 +98,8 @@ const generateResetPasswordToken = async email => {
   if (!user) throw httpError.BadRequest(transErrors.email_undefined)
   const token = await generateToken(
     { sub: user.id },
-    config.jwt.secret.resetPassword,
-    config.jwt.expiration.resetPassword
+    config.jwt.resetPasswordSecret,
+    config.jwt.resetPasswordExpiration
   )
   return token
 }
@@ -110,7 +110,7 @@ const generateResetPasswordToken = async email => {
  * @returns {Promise<user>}
  */
 const verifyActivationToken = async token => {
-  const user = await verifyToken(token, config.jwt.secret.activate)
+  const user = await verifyToken(token, config.jwt.activateSecret)
   return user
 }
 
@@ -120,7 +120,7 @@ const verifyActivationToken = async token => {
  * @returns {Promise<sub>}
  */
 const verifyRefreshToken = async token => {
-  return await verifyToken(token, config.jwt.secret.refresh)
+  return await verifyToken(token, config.jwt.refreshSecret)
 }
 
 export default {

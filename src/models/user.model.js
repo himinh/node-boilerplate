@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 import bcrypt from 'bcryptjs'
 import { roles } from '../config/roles'
-import { transValidations } from '../../lang/en'
+import { transValidations } from '../_lang/en'
 import toJSON from './plugins/toJson'
 import paginate from './plugins/paginate'
 

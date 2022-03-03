@@ -1,7 +1,7 @@
 import fs from 'fs'
 import createHttpError from 'http-errors'
 import config from '../config/config'
-import { transErrors } from '../../lang/en'
+import { transErrors } from '../_lang/en'
 
 const upload = (req, res, next) => {
   // check file exist

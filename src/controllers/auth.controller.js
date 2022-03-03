@@ -1,6 +1,6 @@
 import createHttpError from 'http-errors'
 import catchAsync from '../utils/catchAsync'
-import { tranSuccess, transErrors } from '../../lang/en'
+import { tranSuccess, transErrors } from '../_lang/en'
 import config from '../config/config'
 import {
   userService,
@@ -51,7 +51,7 @@ const login = catchAsync(async (req, res) => {
   const rf_token = await authService.loginWithEmailAndPassword(email, password)
 
   // store refresh token
-  res.cookie('_apprftoken', rf_token, config.jwt.cookie)
+  res.cookie('_apprftoken', rf_token, config.cookie)
 
   res.send({ message: tranSuccess.login_success })
 })
@@ -96,7 +96,7 @@ const forgotPassword = catchAsync(async (req, res, next) => {
   )
 
   // success
-  res.json({ message: tranSuccess.sendmail_reset_password_success })
+  res.send({ message: tranSuccess.sendmail_reset_password_success })
 })
 
 /**
@@ -117,7 +117,7 @@ const resetPassword = catchAsync(async (req, res) => {
  */
 const logout = catchAsync(async (req, res) => {
   // clear cookie
-  res.clearCookie('_apprftoken', { path: config.jwt.cookie.path })
+  res.clearCookie('_apprftoken', { path: config.cookie.path })
   // success
   res.send({ message: tranSuccess.logout_success })
 })

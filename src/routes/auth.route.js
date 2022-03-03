@@ -7,7 +7,7 @@ import { authValidation, userValidation } from '../validations'
 const router = new Router()
 
 router.post(
-  '/sign-up',
+  '/register',
   validate(userValidation.createUser),
   authController.register
 )
@@ -16,7 +16,7 @@ router.post(
   validate(authValidation.activate),
   authController.activate
 )
-router.post('/sign-in', validate(authValidation.login), authController.login)
+router.post('/login', validate(authValidation.login), authController.login)
 router.get('/access-token', authController.accessToken)
 router.post(
   '/forgot-password',

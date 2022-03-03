@@ -1,6 +1,6 @@
 import catchAsync from '../utils/catchAsync'
 import { uploadService } from '../services'
-import { tranSuccess } from '../../lang/en'
+import { tranSuccess } from '../_lang/en'
 
 /**
  * Upload avatar

@@ -5,15 +5,15 @@ export PORT=8888
 
 # URL of the Mongo DB
 # export MONGODB_URL="mongodb://127.0.0.1:27017/node-boilerplate"
-export MONGODB_URL="mongodb+srv://nodeboilerplate:nodeboilerplate@cluster0.50v3n.mongodb.net/node-boilerplate?retryWrites=true&w=majority"
+export MONGODB_URL="mongodb+srv://minhchiu:minhchiu@cluster0.8r8ak.mongodb.net/react-node-ecommerce?retryWrites=true&w=majority"
 
 
 # JWT
 # JWT secret key
-export JWT_ACCESS_SECRET=123123
-export JWT_REFRESH_SECRET=123123
-export JWT_ACTIVATE_SECRET=123123
-export JWT_RESET_PASSWORD_SECRET=10m
+export JWT_ACCESS_SECRET=access_secret
+export JWT_REFRESH_SECRET=refresh_secret
+export JWT_ACTIVATE_SECRET=activate_secret
+export JWT_RESET_PASSWORD_SECRET=reset_pass_secret
 
 # JWT expirations
 export JWT_ACCESS_EXPIRATION=15m

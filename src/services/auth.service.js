@@ -1,6 +1,6 @@
 import createError from 'http-errors'
 import { tokenService } from '.'
-import { transErrors } from '../../lang/en'
+import { transErrors } from '../_lang/en'
 import userService from './user.service'
 
 /**
