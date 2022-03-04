@@ -33,7 +33,7 @@ const errorHandler = (err, req, res, next) => {
   res.status(error.statusCode || 500).json({
     name: err.name,
     code: error.statusCode || 500,
-    message:
+    error:
       (error.statusCode && error.message) ||
       createHttpError.InternalServerError().message,
   })
